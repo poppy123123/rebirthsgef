@@ -1,0 +1,141 @@
+-- Gui to Lua
+
+
+-- Version: 3.2
+
+
+
+-- Instances:
+
+
+
+local ScreenGui = Instance.new("ScreenGui")
+
+
+local Rebirths = Instance.new("TextLabel")
+
+
+local ImageLabel = Instance.new("ImageLabel")
+
+
+
+--Properties:
+
+
+
+ScreenGui.Parent = game.CoreGui
+
+
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+
+Rebirths.Name = "Rebirths"
+
+
+Rebirths.Parent = ScreenGui
+
+
+Rebirths.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+
+Rebirths.BackgroundTransparency = 1.000
+
+
+Rebirths.BorderSizePixel = 0
+
+
+Rebirths.Position = UDim2.new(0.0597680099, 0, 0.368621171, 0)
+
+
+Rebirths.Size = UDim2.new(0.105411433, 0, 0.079332009, 0)
+
+
+Rebirths.ZIndex = 2
+
+
+Rebirths.Font = Enum.Font.Merriweather
+
+
+Rebirths.Text = "..."
+
+
+Rebirths.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+
+Rebirths.TextScaled = true
+
+
+Rebirths.TextSize = 14.000
+
+
+Rebirths.TextStrokeTransparency = -10.000
+
+
+Rebirths.TextWrapped = true
+
+
+
+ImageLabel.Parent = Rebirths
+
+
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+
+
+ImageLabel.BackgroundTransparency = 1.000
+
+
+ImageLabel.Position = UDim2.new(-0.673719287, 0, 0, 0)
+
+
+ImageLabel.Size = UDim2.new(0.673719287, 0, 1.1557343, 0)
+
+
+ImageLabel.Image = "rbxassetid://7282805145"
+
+
+
+-- Scripts:
+
+
+
+local function WKMX_fake_script() -- Rebirths.LocalScript 
+
+
+	local script = Instance.new('LocalScript', Rebirths)
+
+
+
+	local player = game.Players.LocalPlayer--Gets the player(Only works in local Scripts)
+
+
+	local stats = player:WaitForChild("leaderstats")--Get's the leaderstats
+
+
+	local Rebirths = stats:WaitForChild("Rebirths")--Get's the vlaue(Remember too switch cash out with ur currency name)
+
+
+	
+
+
+	script.Parent.Text = "$"..Rebirths.Value--This will set the text too the cash's value!Let's test it!
+
+
+	
+
+
+	while wait() do--Makes a loop
+
+
+		script.Parent.Text = "$"..Rebirths.Value
+
+
+	end
+
+
+end
+
+
+coroutine.wrap(WKMX_fake_script)()
+
+
